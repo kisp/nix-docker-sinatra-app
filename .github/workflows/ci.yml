@@ -32,9 +32,6 @@ jobs:
     concurrency: deploy-group
     needs: test
     if: ${{ needs.test.result == 'success' }}
-    branches:
-      only:
-        - main
     steps:
       - uses: actions/checkout@v4
       - uses: superfly/flyctl-actions/setup-flyctl@master

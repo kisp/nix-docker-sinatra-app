@@ -1,7 +1,7 @@
 { pkgs ? import <nixpkgs> {} }:
 
 pkgs.stdenv.mkDerivation rec {
-  name = "my-ruby-app";
+  name = "nix-docker-sinatra-app";
 
   src = ./.;
 
