@@ -1,0 +1,40 @@
+---
+on: [push]
+name: Test and Deploy
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - uses: cachix/install-nix-action@v22
+        with:
+          # https://lazamar.co.uk/nix-versions/?channel=nixpkgs-unstable&package=ruby
+          # e89cf1c932006531f454de7d652163a9a5c86668 - 2024-04-07
+          nix_path: nixpkgs=https://github.com/NixOS/nixpkgs/archive/e89cf1c932006531f454de7d652163a9a5c86668.tar.gz
+
+      - name: download shell env
+        run: nix-shell --run ls
+
+      - name: ruby version
+        run: nix-shell --run 'ruby -v'
+
+      - name: rspec
+        run: nix-shell --run rspec
+
+      - name: build
+        run: nix-build
+
+  deploy:
+    name: Deploy app
+    runs-on: ubuntu-latest
+    concurrency: deploy-group
+    needs: test
+    if: ${{ needs.test.result == 'success' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - run: flyctl deploy --remote-only
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
