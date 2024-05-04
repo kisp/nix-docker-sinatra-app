@@ -1,5 +1,3 @@
-#!/usr/bin/env ruby
-
 require "greet"
 
 RSpec.describe "greet" do
