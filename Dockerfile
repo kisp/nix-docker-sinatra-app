@@ -10,7 +10,7 @@ ENV NIX_PATH=nixpkgs=https://github.com/NixOS/nixpkgs/archive/c898ce22834cf40ea6
 RUN nix-build
 
 # Check the specs (especially versions of Ruby and Sinatra)
-RUN nix-shell --run 'rspec'
+RUN nix-shell --run 'rspec -f doc'
 
 # Copy the Nix store closure into a directory. The Nix store closure is the
 # entire set of Nix store values that we need for our build.
