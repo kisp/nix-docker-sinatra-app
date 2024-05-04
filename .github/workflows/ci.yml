@@ -2,6 +2,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 name: Test and Deploy
 
@@ -34,7 +37,7 @@ jobs:
     runs-on: ubuntu-latest
     concurrency: deploy-group
     needs: test
-    if: ${{ needs.test.result == 'success' }}
+    if: ${{ github.ref == 'refs/heads/main' && needs.test.result == 'success' }}
     steps:
       - uses: actions/checkout@v4
       - uses: superfly/flyctl-actions/setup-flyctl@master
