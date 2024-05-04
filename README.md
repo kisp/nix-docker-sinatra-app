@@ -35,7 +35,7 @@ environment files where the pinning is applied:
 | [`.envrc`](./.envrc)                                     | Developing with [direnv](https://direnv.net/)                       |
 | [`.gitlab-ci.yml`](./.gitlab-ci.yml)                     | [GitLabCI](https://gitlab.com/)                                     |
 | [`.github/workflows/ci.yml`](./.github/workflows/ci.yml) | [GitHub CI](https://github.com/kisp/nix-docker-sinatra-app/actions) |
-| [`Dockerfile`](./Dockerfile)                             | Running in [production](https://fly.io/)                            |
+| [`Dockerfile`](./Dockerfile)                             | Running in [production](./fly.toml)                                 |
 
 In these files, the `NIX_PATH` variable is set to
 `nixpkgs=https://github.com/NixOS/nixpkgs/archive/c898ce22834cf40ea69adf6093755532df412102.tar.gz`,
