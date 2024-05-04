@@ -10,7 +10,7 @@ RSpec.describe "versions" do
   end
 
   describe "sinatra" do
-    expected = "4.0.0"
+    expected = "3.2.0"
 
     it "has version #{expected}" do
       expect(Sinatra::VERSION).to eq(expected)
