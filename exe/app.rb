@@ -6,5 +6,5 @@ require 'sinatra'
 require 'greet'
 
 get "/" do
-  "#{greet "World"} [RUBY #{RUBY_VERSION}] [Sinatra #{Sinatra::VERSION}]"
+  "<h1>#{greet "World"} [RUBY #{RUBY_VERSION}] [Sinatra #{Sinatra::VERSION}]</h1>"
 end
