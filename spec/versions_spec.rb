@@ -8,8 +8,8 @@ RSpec.describe "versions" do
   end
 
   describe "sinatra" do
-    it "has version 3.1.4" do
-      expect(Sinatra::VERSION).to eq("3.1.4")
+    it "has version 4.0.0" do
+      expect(Sinatra::VERSION).to eq("4.0.0")
     end
   end
 end
