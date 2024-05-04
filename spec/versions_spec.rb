@@ -1,3 +1,5 @@
+require "sinatra"
+
 RSpec.describe "versions" do
   describe "ruby" do
     it "has version 3.1.4" do
