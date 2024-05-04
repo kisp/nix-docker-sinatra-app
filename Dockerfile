@@ -4,6 +4,8 @@ FROM nixos/nix:latest AS builder
 COPY . /tmp/build
 WORKDIR /tmp/build
 
+ENV NIX_PATH=nixpkgs=https://github.com/NixOS/nixpkgs/archive/c898ce22834cf40ea69adf6093755532df412102.tar.gz
+
 # Build our Nix environment
 RUN nix-build
 
