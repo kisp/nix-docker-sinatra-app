@@ -6,5 +6,5 @@ require 'sinatra'
 require 'greet'
 
 get "/" do
-  greet "World"
+  "#{greet "World"} [RUBY #{RUBY_VERSION}]"
 end
