@@ -3,6 +3,14 @@
 This repository demonstrates the use of Nix to build a small Docker
 image for a Ruby Sinatra application.
 
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+**Table of Contents**
+
+- [Inspiration](#inspiration)
+- [Pinning of Packages](#pinning-of-packages)
+
+<!-- markdown-toc end -->
+
 ## Inspiration
 
 This project draws inspiration from the article "Using Nix with
@@ -20,10 +28,10 @@ environment files where the pinning is applied:
 
 | File                       | Environment                                                         |
 |----------------------------|---------------------------------------------------------------------|
-| `.gitlab-ci.yml`           | [GitLabCI](https://gitlab.com/)                                     |
-| `Dockerfile`               | Running in [production](https://fly.io/)                            |
-| `.github/workflows/ci.yml` | [GitHub CI](https://github.com/kisp/nix-docker-sinatra-app/actions) |
 | `.envrc`                   | Developing with [direnv](https://direnv.net/)                       |
+| `.gitlab-ci.yml`           | [GitLabCI](https://gitlab.com/)                                     |
+| `.github/workflows/ci.yml` | [GitHub CI](https://github.com/kisp/nix-docker-sinatra-app/actions) |
+| `Dockerfile`               | Running in [production](https://fly.io/)                            |
 
 In these files, the `NIX_PATH` variable is set to
 `nixpkgs=https://github.com/NixOS/nixpkgs/archive/c898ce22834cf40ea69adf6093755532df412102.tar.gz`,
