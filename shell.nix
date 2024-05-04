@@ -5,6 +5,5 @@ pkgs.mkShell {
   buildInputs = with pkgs; [
     (import ./default.nix { inherit pkgs; }).buildInputs
     rubyPackages.rspec
-    flyctl
   ];
 }

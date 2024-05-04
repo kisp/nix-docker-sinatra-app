@@ -7,6 +7,9 @@ WORKDIR /tmp/build
 # Build our Nix environment
 RUN nix-build
 
+# Check the specs (especially versions of Ruby and Sinatra)
+RUN nix-shell --run 'rspec'
+
 # Copy the Nix store closure into a directory. The Nix store closure is the
 # entire set of Nix store values that we need for our build.
 RUN mkdir /tmp/nix-store-closure
