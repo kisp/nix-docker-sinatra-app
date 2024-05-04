@@ -21,7 +21,7 @@ jobs:
         run: nix-shell --run 'ruby -v'
 
       - name: rspec
-        run: nix-shell --run rspec
+        run: nix-shell --run 'rspec -f doc'
 
       - name: build
         run: nix-build
