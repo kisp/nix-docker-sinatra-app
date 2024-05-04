@@ -11,8 +11,7 @@ jobs:
       - uses: cachix/install-nix-action@v22
         with:
           # https://lazamar.co.uk/nix-versions/?channel=nixpkgs-unstable&package=ruby
-          # d1c3fea7ecbed758168787fe4e4a3157e52bc808 - 2022-04-18
-          nix_path: nixpkgs=https://github.com/NixOS/nixpkgs/archive/d1c3fea7ecbed758168787fe4e4a3157e52bc808.tar.gz
+          nix_path: nixpkgs=https://github.com/NixOS/nixpkgs/archive/c898ce22834cf40ea69adf6093755532df412102.tar.gz
 
       - name: download shell env
         run: nix-shell --run ls
