@@ -18,10 +18,10 @@ package versions are pinned to the hash
 searching for the hash in the repository. Here are the four
 environment files where the pinning is applied:
 
-- `.gitlab-ci.yml`
-- `Dockerfile`
-- `.github/workflows/ci.yml`
-- `.envrc`
+- `.gitlab-ci.yml` :: GitLabCI environment
+- `Dockerfile` :: Environment for running in production
+- `.github/workflows/ci.yml` :: GitHub CI environment
+- `.envrc` :: Development environment with direnv
 
 In these files, the `NIX_PATH` variable is set to
 `nixpkgs=https://github.com/NixOS/nixpkgs/archive/c898ce22834cf40ea69adf6093755532df412102.tar.gz`,
