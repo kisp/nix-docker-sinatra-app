@@ -3,6 +3,10 @@
 This repository demonstrates the use of Nix to build a small Docker
 image for a Ruby Sinatra application.
 
+**Notes:** The deployed application at
+[https://nix-docker-sinatra-app.fly.dev/](https://nix-docker-sinatra-app.fly.dev/)
+might not always be running.
+
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
 **Table of Contents**
 
